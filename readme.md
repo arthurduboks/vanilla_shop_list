@@ -10,3 +10,6 @@ An intuitive shopping list application built with vanilla JavaScript.
 - ⚙️ Efficient management of the application state.
 
 ![Screenshot of the Shopping List App](assets/screen.png)
+
+## 🚀 Live Preview
+Check out the live demo of the app: [Vanilla Shopping List Preview](https://arthurduboks.github.io/vanilla_shop_list/)
