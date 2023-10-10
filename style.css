@@ -9,11 +9,11 @@
 }
 
 body {
+  background-image: url("./assets/paper_background.jpg");
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #333;
-  background-color: #f5f5f5;
 }
 
 header {
@@ -43,36 +43,76 @@ header h1 {
   width: 100%;
   font-size: 18px;
   margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 12px 15px; /* Increased padding slightly for better spacing */
+  border: none; /* Removed border to rely on box-shadow for depth */
+  border-radius: 15px; /* Increased for a more rounded appearance */
   outline: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  background-color: #f4f4f4; /* Light background color */
+  color: #333; /* Darker text color for better contrast */
+}
+
+.form-input:focus {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Darker shadow on focus */
+  transform: translateY(
+    -2px
+  ); /* Slight upward movement on focus for a dynamic effect */
 }
 
 .form-input-filter {
   margin-top: 20px;
   width: 100%;
   font-size: 18px;
+  font-weight: 400; /* Slight increase for better readability */
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 12px 15px; /* Increased padding for visual comfort */
   border: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #ccc; /* Wider border for modern emphasis */
   background: transparent;
   outline: none;
+  transition: border-color 0.3s ease; /* Smooth transition for border color changes */
+}
+
+.form-input-filter:focus {
+  border-bottom-color: #666; /* Darker border on focus for feedback */
 }
 
 /* Buttons */
 .btn {
+  appearance: none; /* The "button" value is often non-standard across browsers. */
   background-color: #333;
+  border: 2px solid #333; /* Slightly thicker border for emphasis */
+  border-radius: 8px; /* Smooth rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Soft shadow for subtle depth */
+  box-sizing: border-box;
   color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
   cursor: pointer;
+  display: inline-block;
+  font-family: ITCAvantGardeStd-Bk, Arial, sans-serif;
+  font-size: 16px; /* Slightly larger for better readability */
+  font-weight: 500; /* Semi-bold for emphasis */
+  line-height: 1.4; /* Adjusted for vertical rhythm */
+  margin: 0 5px 10px 0;
+  padding: 15px 45px; /* Adjusted padding for better visual balance */
+  text-align: center;
+  text-transform: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    transform 0.3s ease; /* Smooth transitions */
+  user-select: none;
+  vertical-align: middle;
 }
 
 .btn:hover {
-  background-color: #444;
+  background-color: #444; /* Slightly lighter shade on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+  transform: translateY(-1px); /* Slight upward movement for dynamic feedback */
+}
+
+.btn:active {
+  background-color: #222; /* Darker shade for active state */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Flatter shadow when active */
+  transform: translateY(1px); /* Slight downward push */
 }
 
 .btn-link {
@@ -88,12 +128,28 @@ header h1 {
   margin-top: 20px;
   width: 100%;
   font-size: 16px;
-  background-color: transparent;
+  background-color: #f6f6f6; /* Light gray background for contrast */
   color: #333;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px 20px;
+  border: none; /* Removed to rely on box-shadow */
+  border-radius: 12px; /* Increased for a modern rounded look */
+  padding: 12px 25px; /* Adjusted padding for better spacing */
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: all 0.3s ease; /* Smooth transitions for all properties */
+  font-weight: 500; /* Semi-bold font for better readability */
+}
+
+.btn-clear:hover {
+  background-color: #e4e4e4; /* Slightly darker shade for hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
+  transform: translateY(
+    -2px
+  ); /* Slight upward movement for a dynamic feel on hover */
+}
+
+.btn-clear:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Flattened shadow when button is clicked */
+  transform: translateY(1px); /* Slight downward movement when clicked */
 }
 
 .btn-clear:hover {
@@ -116,16 +172,58 @@ header h1 {
   display: flex;
   justify-content: space-between;
   width: 45%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: none; /* Removed the border */
+  border-radius: 12px; /* Increased border-radius */
   padding: 10px 15px;
   margin: 0 5px 20px;
-  font-weight: 700;
+  font-weight: 400; /* Lighter font weight */
   cursor: pointer;
+  background-color: #fff; /* A subtle white background */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transitions */
 }
 
+.items li:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly darker shadow on hover */
+  transform: translateY(-3px); /* A slight upward movement on hover */
+}
+
+/* For smaller devices */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5em; /* Adjust font size */
+    margin-left: 5px; /* Reduce margin */
+  }
+
+  .container {
+    padding: 15px; /* Reduce padding for more space */
+  }
+
+  .form-input,
+  .form-input-filter {
+    font-size: 16px; /* Adjust font size */
+    padding: 10px 12px; /* Adjust padding */
+  }
+
+  .btn {
+    font-size: 15px; /* Adjust font size */
+    padding: 10px 35px; /* Adjust padding */
+  }
+
+  .btn-clear {
+    font-size: 15px; /* Adjust font size */
+    padding: 10px 20px; /* Adjust padding */
+  }
+
+  .items li {
+    margin-bottom: 15px; /* Reduce margin */
+  }
+}
+
+/* For very small devices (like smartphones) */
 @media (max-width: 500px) {
   .items li {
-    width: 100%;
+    width: 100%; /* Make list items full width */
+    margin: 0 0 15px 0; /* Adjust margin */
   }
 }
